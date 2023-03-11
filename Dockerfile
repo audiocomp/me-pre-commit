@@ -7,7 +7,6 @@ RUN apk update --no-cache
 RUN apk add --no-cache --virtual .build-deps gcc libc-dev make \
     && apk add --no-cache git \
     && pip install --no-cache-dir -r requirements.txt \
-    && mypy --install-types \
     && git init . \
     && pre-commit autoupdate \
     && pre-commit install-hooks \
