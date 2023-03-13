@@ -2,7 +2,7 @@ FROM python:3.9-alpine
 
 COPY requirements.txt .
 COPY .pre-commit-config.yaml .
-COPY .me_csv-0.1.0-py3-none-any.whl .
+COPY me_csv-0.1.0-py3-none-any.whl .
 
 RUN apk update --no-cache
 RUN apk add --no-cache --virtual .build-deps gcc libc-dev make \
