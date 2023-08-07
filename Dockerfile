@@ -1,4 +1,8 @@
-FROM python:3.9-alpine
+FROM python:3.11-alpine3.18
+LABEL maintainer="Steve Brown https://github.com/audiocomp"
+
+# Update SSL
+RUN apk add --no-cache --progress -v openssl
 
 COPY requirements.txt .
 COPY .pre-commit-config.yaml .
