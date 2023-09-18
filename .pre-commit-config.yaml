@@ -28,7 +28,13 @@ repos:
     rev: v1.5.1
     hooks:
     -   id: mypy
-        args: [--install-types, --ignore-missing-imports, --check-untyped-defs]
+        args: [--ignore-missing-imports, --check-untyped-defs]
+        additional_dependencies:
+        - 'types-PyYAML'
+        - 'types-requests'
+        - 'types-selenium'
+        - 'types-tabulate'
+        - 'types-urllib3'
 -   repo: https://github.com/timothycrosley/isort
     rev: 5.12.0
     hooks:
