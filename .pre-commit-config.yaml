@@ -17,7 +17,7 @@ repos:
     -   id: end-of-file-fixer
     -   id: mixed-line-ending
 -   repo: https://github.com/executablebooks/mdformat
-    rev: 0.7.16  # Use the ref you want to point at
+    rev: 0.7.17  # Use the ref you want to point at
     hooks:
     - id: mdformat
         # Optionally add plugins
@@ -25,19 +25,21 @@ repos:
       - mdformat-gfm
       - mdformat-black
 -   repo: https://github.com/pre-commit/mirrors-mypy
-    rev: v1.1.1
+    rev: v1.5.1
     hooks:
     -   id: mypy
+        args: [--install-types, --ignore-missing-imports, --check-untyped-defs]
 -   repo: https://github.com/timothycrosley/isort
     rev: 5.12.0
     hooks:
     -   id: isort
+        args: ["--profile", "black", "-l", "79"]
 -   repo: https://github.com/psf/black
-    rev: 23.1.0
+    rev: 23.9.1
     hooks:
     -   id: black
         args: [--line-length=79]
 -   repo: https://github.com/PyCQA/flake8
-    rev: 6.0.0
+    rev: 6.1.0
     hooks:
     -   id: flake8
