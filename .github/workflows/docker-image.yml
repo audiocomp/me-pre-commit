@@ -9,7 +9,7 @@ on:
 
 jobs:
   build:
-    name: Build snd Push Docker Image to DockerHub
+    name: Build and Push Docker Image to DockerHub
     runs-on: ubuntu-latest
     permissions:
       packages: write
@@ -35,7 +35,7 @@ jobs:
           VERSION=$(cat VERSION)
           echo "VERSION=$VERSION" >> $GITHUB_ENV
 
-      - name: Build and push Docker image
+      - name: Build and push Docker image with latest tag
         uses: docker/build-push-action@v6
         with:
           context: .
