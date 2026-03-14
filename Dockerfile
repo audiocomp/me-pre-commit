@@ -2,7 +2,7 @@ FROM python:3.14-alpine3.23 AS builder
 LABEL maintainer="Steve Brown https://github.com/audiocomp"
 
 # Update base image and install dependencies
-RUN apk update && apk upgrade --no-cache -v && apk add --no-cache -v gcc libc-dev make git libcap
+RUN apk update && apk upgrade --no-cache --available -v && apk add --no-cache -v gcc libc-dev make git libcap
 
 # Update PIP and install required packages
 COPY requirements.txt /tmp/requirements.txt
@@ -21,7 +21,7 @@ FROM python:3.14-alpine3.23
 LABEL maintainer="Steve Brown https://github.com/audiocomp"
 
 # Update base image
-RUN apk update && apk upgrade --no-cache -v && apk add --no-cache -v git
+RUN apk update && apk upgrade --no-cache --available -v && apk add --no-cache -v git
 RUN pip install --upgrade pip && pip install --no-cache-dir pre-commit
 
 # Create a non-root user and group
