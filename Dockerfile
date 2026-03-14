@@ -30,7 +30,7 @@ ENV PATH="$PATH:/home/appuser/.local/bin"
 
 # Copy Python packages from builder stage
 COPY --from=builder /app /app
-COPY --from=builder /usr/local/lib/python3.13/site-packages /usr/local/lib/python3.13/site-packages
+COPY --from=builder /usr/local/lib/python3.14/site-packages /usr/local/lib/python3.14/site-packages
 
 # Change ownership of the application files
 RUN chown -R appuser:appgroup /app
