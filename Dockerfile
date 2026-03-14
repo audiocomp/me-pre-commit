@@ -9,7 +9,7 @@ COPY requirements.txt /tmp/requirements.txt
 RUN pip install --upgrade pip && pip install --no-cache-dir -r /tmp/requirements.txt
 
 # Grant the application the capability to bind to privileged ports
-RUN setcap 'cap_net_bind_service=+ep' /usr/local/bin/python3.13
+RUN setcap 'cap_net_bind_service=+ep' /usr/local/bin/python3.14
 
 # Copy files
 RUN mkdir /app
