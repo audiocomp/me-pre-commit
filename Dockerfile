@@ -1,4 +1,4 @@
-FROM python:3.13-alpine3.21 AS builder
+FROM python:3.14-alpine3.23 AS builder
 LABEL maintainer="Steve Brown https://github.com/audiocomp"
 
 # Update base image and install dependencies
@@ -17,7 +17,7 @@ COPY .pre-commit-config.yaml /app
 
 
 # Final stage
-FROM python:3.13-alpine3.21
+FROM python:3.14-alpine3.23
 LABEL maintainer="Steve Brown https://github.com/audiocomp"
 
 # Update base image
